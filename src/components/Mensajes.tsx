@@ -22,9 +22,9 @@ const Mensajes: React.FC = () => {
   ])
 
   const [contacts, setContacts] = useState<Contact[]>([
-    { id: 1, name: 'Juan Pérez' },
-    { id: 2, name: 'María García' },
-    { id: 3, name: 'Carlos Rodríguez' },
+    { id: 1, name: 'Cuau' },
+    { id: 2, name: 'Max' },
+    { id: 3, name: 'Cris' },
   ])
 
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null)

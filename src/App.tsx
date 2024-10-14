@@ -8,6 +8,7 @@ import Notificaciones from './components/Notificaciones'
 import TalleresCercanos from './components/TalleresCercanos'
 import Mensajes from './components/Mensajes'
 import Navbar from './components/Navbar'
+import Nosotros from './components/Nosotros'
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -41,6 +42,10 @@ function App() {
           <Route
             path="/mensajes"
             element={isLoggedIn ? <Mensajes /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/Nosotros"
+            element={isLoggedIn ? <Nosotros /> : <Navigate to="/login" />}
           />
         </Routes>
       </div>

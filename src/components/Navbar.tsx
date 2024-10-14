@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Home, Car, Mail, Bell, User, Wrench } from 'lucide-react';
+import { Home, Car, Mail, Bell, User, Wrench, Code2Icon, Info } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   return (
@@ -32,6 +32,10 @@ const Navbar: React.FC = () => {
             <Link to="/perfil" className="flex items-center hover:bg-indigo-700 px-3 py-2 rounded whitespace-nowrap mb-2 md:mb-0">
               <User className="mr-1" />
               Perfil
+            </Link>
+            <Link to="/Nosotros" className="flex items-center hover:bg-indigo-700 px-3 py-2 rounded whitespace-nowrap mb-2 md:mb-0">
+              <Info className="mr-1" />
+              Nosotros
             </Link>
           </div>
         </div>

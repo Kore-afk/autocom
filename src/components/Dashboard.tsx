@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Car, MessageSquare, Bell, Wrench, TrendingUp, Search, Mail } from 'lucide-react'
+import { Car, Bell, Wrench, TrendingUp, Search, Mail, Code2Icon, Info } from 'lucide-react'
 import Publicaciones from './Publicaciones'
 
 const Dashboard: React.FC = () => {
@@ -57,6 +57,11 @@ const Dashboard: React.FC = () => {
               <Mail className="h-8 w-8 text-indigo-600 mb-4" />
               <h2 className="text-xl font-semibold mb-2">Mensajes</h2>
               <p className="text-gray-600">Conecta con otras personas de la comunidad</p>
+            </Link>
+            <Link to="/nosotros" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <Info className="h-8 w-8 text-indigo-600 mb-4" />
+              <h2 className="text-xl font-semibold mb-2">Nosotros</h2>
+              <p className="text-gray-600">Averigua mas sobre nuestro trabajo</p>
             </Link>
           </div>
           <Publicaciones />
