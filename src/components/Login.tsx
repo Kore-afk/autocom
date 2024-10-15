@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Aquí iría la lógica de autenticación real
+    // lógica de autenticación real
     setIsLoggedIn(true)
     navigate('/')
   }
@@ -62,6 +62,7 @@ const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+            <div></div>
           </div>
 
           <div>
