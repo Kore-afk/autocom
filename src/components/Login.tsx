@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = ({ setIsLoggedIn }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // lógica de autenticación real
+    // Aqulógica de autenticación real
     setIsLoggedIn(true)
     navigate('/')
   }
