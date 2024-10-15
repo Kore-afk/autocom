@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <nav className="bg-indigo-600 text-white">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center py-4">
-          <Link to="/" className="text-xl font-bold mb-4 md:mb-0">AutoComunidad</Link>
+          <Link to="/" className="text-xl font-bold mb-4 md:mb-0">MaxiAuto</Link>
           <div className="flex flex-wrap justify-center md:space-x-4">
             <Link to="/" className="flex items-center hover:bg-indigo-700 px-3 py-2 rounded whitespace-nowrap mb-2 md:mb-0">
               <Home className="mr-1" />
