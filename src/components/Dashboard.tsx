@@ -8,14 +8,14 @@ const Dashboard: React.FC = () => {
   const [trendingTopics] = useState([
     { id: 1, name: 'Mantenimiento', count: 120 },
     { id: 2, name: 'Tuning', count: 98 },
-    { id: 3, name: 'Eléctricos', count: 85 },
-    { id: 4, name: 'Clásicos', count: 72 },
-    { id: 5, name: 'Offroad', count: 65 },
+    { id: 3, name: 'Autos Eléctricos', count: 85 },
+    { id: 4, name: 'Historias en carretera', count: 72 },
+    { id: 5, name: 'Tsuritos Team', count: 65 },
   ])
   const [popularCommunities] = useState([
-    { id: 1, name: 'Mecánicos Unidos', members: 5200 },
+    { id: 1, name: 'Mecanicos Unidos', members: 5200 },
     { id: 2, name: 'Amantes del Tuning', members: 4800 },
-    { id: 3, name: 'Autos Eléctricos', members: 3900 },
+    { id: 3, name: 'Uber drivers unidos', members: 3900 },
     { id: 4, name: 'Restauradores de Clásicos', members: 3500 },
     { id: 5, name: 'Aventuras 4x4', members: 3200 },
   ])
@@ -37,6 +37,7 @@ const Dashboard: React.FC = () => {
               />
             </div>
           </div>
+          {/*}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             <Link to="/marketplace" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <Car className="h-8 w-8 text-indigo-600 mb-4" />
@@ -64,6 +65,7 @@ const Dashboard: React.FC = () => {
               <p className="text-gray-600">Averigua mas sobre nuestro trabajo</p>
             </Link>
           </div>
+          */}
           <Publicaciones />
         </div>
         <div className="w-1/4 pl-4">
