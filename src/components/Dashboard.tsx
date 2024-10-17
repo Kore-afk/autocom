@@ -37,35 +37,6 @@ const Dashboard: React.FC = () => {
               />
             </div>
           </div>
-          {/*}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            <Link to="/marketplace" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Car className="h-8 w-8 text-indigo-600 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Marketplace</h2>
-              <p className="text-gray-600">Explora y publica autos en venta.</p>
-            </Link>
-            <Link to="/talleres-cercanos" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Wrench className="h-8 w-8 text-indigo-600 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Talleres Cercanos</h2>
-              <p className="text-gray-600">Encuentra talleres mecánicos en tu área.</p>
-            </Link>
-            <Link to="/notificaciones" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Bell className="h-8 w-8 text-indigo-600 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Notificaciones</h2>
-              <p className="text-gray-600">Mantente al día con las últimas actualizaciones.</p>
-            </Link>
-            <Link to="/mensajes" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Mail className="h-8 w-8 text-indigo-600 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Mensajes</h2>
-              <p className="text-gray-600">Conecta con otras personas de la comunidad</p>
-            </Link>
-            <Link to="/nosotros" className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <Info className="h-8 w-8 text-indigo-600 mb-4" />
-              <h2 className="text-xl font-semibold mb-2">Nosotros</h2>
-              <p className="text-gray-600">Averigua mas sobre nuestro trabajo</p>
-            </Link>
-          </div>
-          */}
           <Publicaciones />
         </div>
         <div className="w-1/4 pl-4">

@@ -12,12 +12,11 @@ interface UserProfile {
 
 const Perfil: React.FC = () => {
   const [user, setUser] = useState<UserProfile>({
-    name: 'Ana Martínez',
-    email: 'ana.martinez@example.com',
-    phone: '+1 234 567 890',
-    location: 'Ciudad de México, México',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80',
-    rating: 4.5
+    name: 'Alonso Crack',
+    email: '2200637@iuem.edu.mx',
+    phone: '+52 722 467 3467',
+    location: 'Metepec, México',
+    avatar: 'https://i.imgur.com/bv4ulC3.jpeg"',rating: 4.5
   })
 
   const [showModal, setShowModal] = useState(false)
