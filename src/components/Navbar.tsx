@@ -1,17 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Bell,
-  Home,
-  Info,
-  LogOut,
-  Mail,
-  Store,
-  User,
-  Wrench,
-  Sun,
-  Moon,
-} from "lucide-react";
+import {Bell,Home,Info,LogOut,Mail,Store,User,Wrench} from "lucide-react";
 
 const Navbar: React.FC = () => {
   return (
@@ -37,7 +26,7 @@ const Navbar: React.FC = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounde4-bo4 z-[0] mt-3 w-42 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounde4-bo4 z-50 mt-3 w-42 p-2 shadow absolute"
           >
             <li className="flex items-left">
               <Link to="/" className="flex items-center">
@@ -115,8 +104,10 @@ const Navbar: React.FC = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
+            <div className="avatar online">
             <div className="w-10 rounded-full">
               <img src="https://i.imgur.com/bv4ulC3.jpeg" />
+            </div>
             </div>
           </div>
           <ul

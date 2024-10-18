@@ -16,7 +16,7 @@ const Perfil: React.FC = () => {
     email: '2200637@iuem.edu.mx',
     phone: '+52 722 467 3467',
     location: 'Metepec, México',
-    avatar: 'https://i.imgur.com/bv4ulC3.jpeg"',rating: 4.5
+    avatar: 'https://i.imgur.com/bv4ulC3.jpeg',rating: 4.5
   })
 
   const [showModal, setShowModal] = useState(false)
@@ -41,7 +41,7 @@ const Perfil: React.FC = () => {
           <img src={user.avatar} alt={user.name} className="w-24 h-24 rounded-full mr-6" />
           <div>
             <h2 className="text-2xl font-semibold">{user.name}</h2>
-            <p className="text-gray-600">Entusiasta de autos</p>
+            <p className="text-gray-600">Entusiasta de los versa</p>
             <div className="flex items-center mt-2">
               <Star className="w-5 h-5 text-yellow-400 mr-1" />
               <span>{user.rating.toFixed(1)}</span>
