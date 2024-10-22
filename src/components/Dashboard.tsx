@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Search, Users, MessageSquare, ArrowUp, ArrowDown, PlusCircle } from "lucide-react";
+import {
+  Search,
+  Users,
+  MessageSquare,
+  ArrowUp,
+  ArrowDown,
+  PlusCircle,
+  TrendingUp,
+  Users as UsersIcon,
+} from "lucide-react";
 
 interface Post {
   id: number;
@@ -24,7 +33,8 @@ const Dashboard: React.FC = () => {
     {
       id: 1,
       author: "Juan Pérez",
-      content: "¿Alguien sabe dónde puedo conseguir piezas para un Volkswagen Golf 2015?",
+      content:
+        "¿Alguien sabe dónde puedo conseguir piezas para un Volkswagen Golf 2015?",
       upvotes: 5,
       downvotes: 1,
       comments: [],
@@ -32,18 +42,20 @@ const Dashboard: React.FC = () => {
     },
     {
       id: 2,
-      author: "María García",
-      content: "Acabo de instalar un nuevo sistema de sonido en mi auto. ¡Suena increíble!",
+      author: "Beto Estrada",
+      content: "con esta obra de arte he subido varios trans, bendiciones",
       upvotes: 10,
       downvotes: 2,
       comments: [],
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
+      image:
+        "https://th.bing.com/th/id/OIP.tY57lGSRPdAN0Gyz1cs9vAHaEd?rs=1&pid=ImgDetMain",
       createdAt: new Date("2023-05-02"),
     },
     {
       id: 3,
       author: "Carlos Rodríguez",
-      content: "Recomiendo este taller para alineación y balanceo. Excelente servicio.",
+      content:
+        "Recomiendo este taller para alineación y balanceo. Excelente servicio.",
       upvotes: 8,
       downvotes: 1,
       comments: [],
@@ -58,6 +70,8 @@ const Dashboard: React.FC = () => {
   const [newComment, setNewComment] = useState("");
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const [showTrendingTopics, setShowTrendingTopics] = useState(false);
+  const [showPopularCommunities, setShowPopularCommunities] = useState(false);
 
   const [trendingTopics] = useState([
     { id: 1, name: "Mantenimiento", count: 120 },
@@ -178,21 +192,24 @@ const Dashboard: React.FC = () => {
 
   const Publicaciones: React.FC = () => {
     return (
-      <>
+      <div className="bg-base-200 p-4 rounded-box">
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">Publicaciones</h1>
+          <h2 className="text-2xl font-bold text-base-content">
+            Publicaciones
+          </h2>
           <button
             onClick={() => setShowModal(true)}
-            className="btn btn-primary"
+            className="btn btn-primary btn-sm md:btn-md"
           >
-            <PlusCircle className="mr-2" />
-            Nueva publicación
+            <PlusCircle className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+            <span className="hidden sm:inline">Nueva publicación</span>
+            <span className="sm:hidden">Nuevo</span>
           </button>
         </div>
 
         <div className="mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center w-full sm:w-auto">
-            <label htmlFor="sort" className="mr-2">
+            <label htmlFor="sort" className="mr-2 text-base-content">
               Ordenar por:
             </label>
             <select
@@ -209,7 +226,11 @@ const Dashboard: React.FC = () => {
             </select>
           </div>
           <div className="flex items-center w-full sm:w-auto">
-            <div className={`input-group w-full transition-all duration-300 ease-in-out ${isSearchExpanded ? 'w-64' : 'w-10'}`}>
+            <div
+              className={`input-group w-full transition-all duration-300 ease-in-out ${
+                isSearchExpanded ? "w-64" : "w-10"
+              }`}
+            >
               <button className="btn btn-square" onClick={handleSearchToggle}>
                 <Search />
               </button>
@@ -239,7 +260,9 @@ const Dashboard: React.FC = () => {
                     >
                       <ArrowUp />
                     </button>
-                    <span className="my-1">{post.upvotes - post.downvotes}</span>
+                    <span className="my-1">
+                      {post.upvotes - post.downvotes}
+                    </span>
                     <button
                       onClick={() => handleVote(post.id, false)}
                       className="btn btn-ghost btn-sm"
@@ -248,7 +271,7 @@ const Dashboard: React.FC = () => {
                     </button>
                   </div>
                   <div>
-                    <h2 className="card-title">{post.author}</h2>
+                    <h3 className="card-title">{post.author}</h3>
                     <p>{post.content}</p>
                     {post.image && (
                       <figure className="mt-4">
@@ -274,59 +297,47 @@ const Dashboard: React.FC = () => {
             </div>
           ))}
         </div>
-      </>
+      </div>
     );
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div className="lg:col-span-3">
-          <h1 className="text-4xl font-bold mb-6">Bienvenido al Dashboard</h1>
-          <Publicaciones />
-        </div>
+    <div className="min-h-screen bg-base-100 text-base-content">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-3">
+            <h1 className="text-4xl font-bold mb-6 text-base-content">
+              Bienvenido al MaxiAuto
+            </h1>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1">
+            <button 
+              onClick={() => setShowTrendingTopics(true)}
+              className="btn btn-primary w-full"
+            >
+              <TrendingUp className="mr-2" />
+              Temas en Tendencia
+            </button >
+            <button
+              onClick={() => setShowPopularCommunities(true)}
+              className="btn btn-primary w-full"
+            >
+              <UsersIcon className="mr-2" />
+              Comunidades Populares
+            </button>
+          </div>
+            <Publicaciones />
+          </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-1">
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <h2 className="card-title">Temas en Tendencia</h2>
-              <ul>
-                {trendingTopics.map((topic) => (
-                  <li key={topic.id} className="mb-2">
-                    <a href="#" className="link link-primary">
-                      #{topic.name}{" "}
-                      <span className="text-base-content">({topic.count})</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="card bg-base-100 shadow-xl">
-            <div className="card-body">
-              <h2 className="card-title">Comunidades Populares</h2>
-              <ul>
-                {popularCommunities.map((community) => (
-                  <li key={community.id} className="mb-2">
-                    <a href="#" className="link link-primary">
-                      {community.name}{" "}
-                      <span className="text-base-content">
-                        ({community.members}
-                        <Users className="inline-block h-4 w-4 ml-1" />)
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          
         </div>
       </div>
 
       {showModal && (
         <div className="modal modal-open">
-          <div className="modal-box">
-            <h2 className="text-xl font-bold mb-4">Nueva Publicación</h2>
+          <div className="modal-box bg-base-200">
+            <h3 className="font-bold text-lg mb-4 text-base-content">
+              Nueva Publicación
+            </h3>
             <form onSubmit={handleSubmit}>
               <textarea
                 name="content"
@@ -362,18 +373,20 @@ const Dashboard: React.FC = () => {
 
       {selectedPost && (
         <div className="modal modal-open">
-          <div className="modal-box">
-            <h2 className="text-xl font-bold mb-4">
+          <div className="modal-box bg-base-200">
+            <h3 className="font-bold text-lg mb-4 text-base-content">
               {selectedPost.author} - Comentarios
-            </h2>
+            </h3>
             <div className="max-h-60 overflow-y-auto mb-4">
               {selectedPost.comments.map((comment) => (
                 <div
                   key={comment.id}
                   className="border-b border-base-300 mb-2 pb-2"
                 >
-                  <p className="font-semibold">{comment.author}</p>
-                  <p>{comment.content}</p>
+                  <p className="font-semibold text-base-content">
+                    {comment.author}
+                  </p>
+                  <p className="text-base-content">{comment.content}</p>
                 </div>
               ))}
             </div>
@@ -397,6 +410,65 @@ const Dashboard: React.FC = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {showTrendingTopics && (
+        <div className="modal modal-open">
+          <div className="modal-box bg-base-200">
+            <h3 className="font-bold text-lg mb-4 text-base-content">
+              Temas en Tendencia
+            </h3>
+            <ul>
+              {trendingTopics.map((topic) => (
+                <li key={topic.id} className="mb-2">
+                  <a href="#" className="link link-primary">
+                    #{topic.name}{" "}
+                    <span className="text-base-content">({topic.count})</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="modal-action">
+              <button
+                onClick={() => setShowTrendingTopics(false)}
+                className="btn"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showPopularCommunities && (
+        <div className="modal modal-open">
+          <div className="modal-box bg-base-200">
+            <h3 className="font-bold text-lg mb-4 text-base-content">
+              Comunidades Populares
+            </h3>
+            <ul>
+              {popularCommunities.map((community) => (
+                <li key={community.id} className="mb-2">
+                  <a href="#" className="link link-primary">
+                    {community.name}{" "}
+                    <span className="text-base-content">
+                      ({community.members}
+                      <Users className="inline-block h-4 w-4 ml-1" />)
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="modal-action">
+              <button
+                onClick={() => setShowPopularCommunities(false)}
+                className="btn"
+              >
+                Cerrar
+              </button>
+            </div>
           </div>
         </div>
       )}

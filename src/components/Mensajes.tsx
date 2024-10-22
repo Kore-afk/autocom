@@ -18,31 +18,31 @@ const Mensajes: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      sender: "Juan Pérez",
+      sender: "CUAU",
       receiver: "Usuario Actual",
-      content: "Hola, ¿cómo estás?",
+      content: "HOLA SEXITO",
       timestamp: new Date("2023-05-10T10:30:00"),
     },
     {
       id: 2,
       sender: "Usuario Actual",
-      receiver: "Juan Pérez",
-      content: "Bien, gracias. ¿Y tú?",
+      receiver: "CUAU",
+      content: "SACAAAAAA",
       timestamp: new Date("2023-05-10T10:35:00"),
     },
     {
       id: 3,
-      sender: "María García",
+      sender: "MAX",
       receiver: "Usuario Actual",
-      content: "¿Tienes información sobre el Ford Mustang?",
+      content: "me gusta que me la metas por que soy re gei",
       timestamp: new Date("2023-05-11T14:20:00"),
     },
   ]);
 
   const [contacts, setContacts] = useState<Contact[]>([
-    { id: 1, name: "Juan Pérez" },
-    { id: 2, name: "María García" },
-    { id: 3, name: "Carlos Rodríguez" },
+    { id: 1, name: "Cuau" },
+    { id: 2, name: "Max" },
+    { id: 3, name: "Cris" },
   ]);
 
   const [selectedContact, setSelectedContact] = useState<Contact | null>(null);

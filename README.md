@@ -1,3 +1,3 @@
 MaxiAuto en desarrollo
 
--fallas en el modo nocturno por reciente implementacion de daisyui, se ajustara a todas las vistas en el siguiente cambio
+-modo nocturno dashboard arreglado, falta maretplace, nosotrs y talleres, falta agregar mas funcionalidades y conectar a base de datos
