@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Bell, X } from 'lucide-react'
+import { Bell, X, Check } from 'lucide-react'
 
 interface Notification {
   id: number
@@ -25,37 +25,35 @@ const Notificaciones: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">Notificaciones</h1>
-      <div className="space-y-4">
-        {notifications.map((notif) => (
-          <div key={notif.id} className={`bg-white rounded-lg shadow-md p-4 flex items-center justify-between ${notif.read ? 'opacity-50' : ''}`}>
-            <div className="flex items-center">
-              <Bell className={`mr-3 ${notif.read ? 'text-gray-400' : 'text-indigo-600'}`} />
-              <span>{notif.content}</span>
-            </div>
-            <div className="flex items-center">
-              {!notif.read && (
-                <button
-                  onClick={() => markAsRead(notif.id)}
-                  className="text-sm text-indigo-600 hover:text-indigo-800 mr-3"
-                >
-                  Marcar como leída
-                </button>
-              )}
-              <button
-                onClick={() => deleteNotification(notif.id)}
-                className="text-gray-500 hover:text-red-600"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
+    <div className="space-y-4">
+      {notifications.map((notif) => (
+        <div key={notif.id} className={`alert ${notif.read ? 'alert-info' : 'alert-warning'} shadow-lg`}>
+          <Bell className={`h-6 w-6 ${notif.read ? 'text-info-content' : 'text-warning-content'}`} />
+          <div>
+            <h3 className={`font-bold ${notif.read ? 'text-info-content' : 'text-warning-content'}`}>
+              {notif.content}
+            </h3>
           </div>
-        ))}
-        {notifications.length === 0 && (
-          <p className="text-center text-gray-500">No tienes notificaciones nuevas</p>
-        )}
-      </div>
+          <div className="flex-none">
+            {!notif.read && (
+              <button className="btn btn-sm btn-ghost" onClick={() => markAsRead(notif.id)}>
+                <Check className="h-4 w-4" />
+              </button>
+            )}
+            <button className="btn btn-sm btn-ghost" onClick={() => deleteNotification(notif.id)}>
+              <X className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+      ))}
+      {notifications.length === 0 && (
+        <div className="alert alert-info shadow-lg">
+          <div>
+            <Bell className="h-6 w-6" />
+            <span>No tienes notificaciones nuevas</span>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
