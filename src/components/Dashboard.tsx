@@ -79,6 +79,7 @@ const Dashboard: React.FC = () => {
     { id: 3, name: "Autos Eléctricos", count: 85 },
     { id: 4, name: "Historias en carretera", count: 72 },
     { id: 5, name: "Tsuritos Team", count: 65 },
+    { id: 6, name: "test 1", count: 79}
   ]);
 
   const [popularCommunities] = useState([
