@@ -22,6 +22,8 @@ const Marketplace: React.FC = () => {
     { id: 1, title: 'Toyota Corolla 2020', price: 18000, image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80', description: 'Excelente estado, único dueño', year: 2020, mileage: 30000, seller: 'Juan Pérez' },
     { id: 2, title: 'Honda Civic 2019', price: 16500, image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80', description: 'Mantenimiento al día, como nuevo', year: 2019, mileage: 45000, seller: 'María García' },
     { id: 3, title: 'Ford Mustang 2018', price: 25000, image: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80', description: 'Deportivo en perfectas condiciones', year: 2018, mileage: 35000, seller: 'Carlos Rodríguez' },
+    { id: 4, title: 'Chevy pop', price: 45000, image: 'https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80', description: 'Deportivo en perfectas condiciones', year: 2018, mileage: 35000, seller: 'Carlos Rodríguez' },
+
   ])
 
   const [showModal, setShowModal] = useState(false)
